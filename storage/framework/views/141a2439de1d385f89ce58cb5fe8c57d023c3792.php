@@ -1,0 +1,2 @@
+sdfsdfsdf
+<?php echo $__env->make('layouts.testes', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\EDDY\PROJECTOS\trabalho\resources\views/tt.blade.php ENDPATH**/ ?>
