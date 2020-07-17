@@ -11,17 +11,36 @@
 |
 */
 
+
+
+Route::get('reg_pessoa_perdida', function () {
+    return view('form_reg_pessoa_perdida');
+});
+
+Route::get('ver_pessoa_perdida', function () {
+    return view('casos_pessoa_perdida');
+});
+/*
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('home2', function () {
-    return view('layouts/master_index');
-});
-
+    return view('map');
+});*/
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/', function () {
+    return view('welcome');
+}); */
 
+Route::get('/','frontOfficeController@index');
+
+Route::get('/enviar', function(){
+    Mail::send('mail.corpo', ['curso' => 'Eloquent'], function($m){
+        $m->from('edsongomex@gmail.c om', 'Edson Gomes');
+        $m->to('hilariogomes16@gmail.com');
+    });
+});
+
+Route::get('mapa','API\testeController@index');
+
+Route::apiResources(['registarUser'=> 'API\userNormalController']);
 
 Route::get('{path}', 'HomeController@index')->where('path','([A-z\d-\/_.]+)?');

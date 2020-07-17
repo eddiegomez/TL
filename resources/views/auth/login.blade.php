@@ -1,20 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.loginlayout')
 
 @section('content')
 
     <!-- CONTENT
     ================================================== -->
-    <div class="container">
-      <div class="row justify-content-center" style="position:relative; top:75px">
-        <div class="col-12 col-md-5 col-xl-4 my-5">
+    <div class="container" style="position:relative; top:30px">
+      <div class="row justify-content-center" style="position:relative; top:30px;">
+        <div class="col-12 col-md-5 col-xl-4 my-5 card" style="padding: 30px; border-radius: 25px; box-shadow: 2px 2px 2px grey">
           
 
           <!-- Heading -->
           <a class="navbar-brand" href="#brand">
-                            <img src="/imagens/logo.png" class="logo" alt="" style="width:350px;position:relative;top:-20px">
-                            <!--<img src="assets/images/footer-logo.png" class="logo logo-scrolled" alt="">-->
-                        </a>
-            
+            <img src="/imagens/logo.png" class="logo" alt="" style="width:330px;position:relative;top:-5px">
+          </a>
+                        
           <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -25,7 +24,7 @@
               <p class="text-muted">Email</p>
 
               <!-- Input -->
-              <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="nome@exemplo.com"  value="{{ old('email') }}" required autocomplete="email" autofocus>
+              <input type="email" name="email" id="email" style="border-radius: 25px;" class="form-control @error('email') is-invalid @enderror" placeholder="nome@exemplo.com"  value="{{ old('email') }}" required autocomplete="email" autofocus>
               @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -60,7 +59,7 @@
               <div class="input-group input-group-merge">
 
                 <!-- Input -->
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <input id="password" type="password" style="border-bottom-left-radius: 2em; border-top-left-radius: 2em;" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                     @error('password')
                       <span class="invalid-feedback" role="alert">
@@ -69,24 +68,27 @@
                     @enderror
                 <!-- Icon -->
                 <div class="input-group-append">
-                  <span class="input-group-text">
-                    <i class="fe fe-eye"></i>
+                  <span class="input-group-text" style="border-bottom-right-radius: 2em; border-top-right-radius: 2em;">
+                    <i class="fas fa-eye"></i>
                   </span>
                 </div>
 
               </div>
             </div>
 
+            <center>
+            <div class="col-sm-8" style="top:15px">
             <!-- Submit -->
-            <button class="btn btn-lg btn-block btn-primary mb-3">
+            <button class="btn btn-lg btn-block btn-primary mb-3" style="border-radius: 25px;">
               Entrar
             </button>
-            
+            </div>
+            </center>
 
             <!-- Link -->
             <div class="text-center">
-              <small class="text-muted text-center">
-                Ainda não possui uma conta? <a href="sign-up.html">Registe-se</a>.
+              <small class="text-muted text-center" style="top:15px">
+                Ainda não possui uma conta? <a href="{{ route('register') }}">Registe-se</a>.
               </small>
             </div>
             

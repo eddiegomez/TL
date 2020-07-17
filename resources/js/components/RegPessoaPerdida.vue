@@ -1,7 +1,7 @@
 <template>
-  <div class="container col-sm-11" style="top: 20px; position:relative">
+  <div class="container col-sm-10" style="top: 20px; position:relative;">
     <div class="card card-primary">
-      <div class="card-header">
+      <div class="card-header" style="background-color:#051d39">
         <h3 class="card-title">Registar pessoa perdida</h3>
       </div>
       <!-- /.card-header -->
@@ -17,7 +17,7 @@
                   v-model="form.apelido"
                   type="text"
                   name="apelido"
-                  class="form-control"
+                  class="form-control curved"
                   :class="{ 'is-invalid': form.errors.has('apelido') }"
                 />
                 <has-error :form="form" field="apelido"></has-error>
@@ -32,7 +32,7 @@
                   v-model="form.nome"
                   type="text"
                   name="nome"
-                  class="form-control"
+                  class="form-control curved"
                   :class="{ 'is-invalid': form.errors.has('nome') }"
                 />
                 <has-error :form="form" field="nome"></has-error>
@@ -44,33 +44,33 @@
                 <label class="text-muted">Outros nomes</label>
                 <input
                   placeholder="Opcional"
-                  v-model="form.nome"
+                  v-model="form.alcunha"
                   type="text"
-                  name="outros"
-                  class="form-control"
-                  :class="{ 'is-invalid': form.errors.has('outros') }"
+                  name="alcunha"
+                  class="form-control curved"
+                  :class="{ 'is-invalid': form.errors.has('alcunha') }"
                 />
-                <has-error :form="form" field="outros"></has-error>
+                <has-error :form="form" field="alcunha"></has-error>
               </div>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label class="text-muted">Data de Nascimento</label>
                 <input
                   v-model="form.data_nascimento"
                   type="date"
                   name="data_nascimento"
-                  class="form-control"
+                  class="form-control curved"
                   :class="{ 'is-invalid': form.errors.has('data_nascimento') }"
                 />
                 <has-error :form="form" field="data_nascimento"></has-error>
               </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label class="text-muted">Nacionalidade</label>
                 <input
@@ -78,13 +78,13 @@
                   v-model="form.nacionalidade"
                   type="text"
                   name="nacionalidade"
-                  class="form-control"
+                  class="form-control curved"
                   :class="{ 'is-invalid': form.errors.has('nacionalidade') }"
                 />
                 <has-error :form="form" field="nacionalidade"></has-error>
               </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
               <div class="form-group">
                 <label class="text-muted">Naturalidade</label>
                 <input
@@ -92,48 +92,33 @@
                   v-model="form.naturalidade"
                   type="text"
                   name="naturalidade"
-                  class="form-control"
+                  class="form-control curved"
                   :class="{ 'is-invalid': form.errors.has('naturalidade') }"
                 />
                 <has-error :form="form" field="naturalidade"></has-error>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group">
+                <label class="text-muted">Genero</label>
+                <select
+                  class="form-control curved"
+                  v-model="form.genero"
+                  type="text"
+                  name="genero"
+                  :class="{ 'is-invalid': form.errors.has('genero') }"
+                >
+                  <option value>Selecione o genero</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
+                <has-error :form="form" field="genero"></has-error>
               </div>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm-4">
-              <label class="text-muted">Genero</label>
-              <div class="row">
-                <div class="col-sm-6" style="position: relative;float: left">
-                  <input
-                    value="Masculino"
-                    v-model="form.masculino"
-                    type="radio"
-                    name="masculino"
-                    class
-                    :class="{ 'is-invalid': form.errors.has('masculino') }"
-                  />
-                  <label for="masculino" class="text-muted">Masculino</label>
-                  <has-error :form="form" field="masculino"></has-error>
-                </div>
-                <br />
-                <div class="col-sm-6" style="position: relative;float: right">
-                  <input
-                    value="Feminino"
-                    v-model="form.feminino"
-                    type="radio"
-                    name="feminino"
-                    class
-                    :class="{ 'is-invalid': form.errors.has('feminino') }"
-                  />
-                  <label for="feminino" class="text-muted">Feminino</label>
-                  <has-error :form="form" field="feminino"></has-error>
-                </div>
-                <br />
-              </div>
-            </div>
-
-            <div class="col-sm-8">
               <div class="form-group">
                 <label for="photo" class="col-sm-10 text-muted">Fotografia</label>
                 <input type="file" @change="gravarFoto" name="photo" class="form-input" />
@@ -149,13 +134,17 @@
               v-model="form.descricao"
               type="text"
               name="descricao"
-              class="form-control"
+              class="form-control curved"
               :class="{ 'is-invalid': form.errors.has('descricao') }"
             ></textarea>
             <has-error :form="form" field="descricao"></has-error>
           </div>
 
-          <button type="submit" class="btn btn-primary float-right">Registar</button>
+          <button
+            @click.prevent="publicarCaso"
+            type="submit"
+            class="btn btn-primary float-right curved"
+          >Publicar</button>
         </div>
         <!-- /.card-body -->
       </form>
@@ -163,12 +152,20 @@
   </div>
 </template>
 
+<style>
+.curved {
+  border-radius: 25px;
+}
+</style>
+
 <script>
 export default {
   data() {
     return {
       form: new Form({
         nome: "",
+        apelido: "",
+        alcunha: "",
         data_nascimento: "",
         nacionalidade: "",
         naturalidade: "",
@@ -180,6 +177,8 @@ export default {
   methods: {
     gravarFoto(e) {
       let file = e.target.files[0];
+      //extrai os dados da img
+      console.log(file);
       let reader = new FileReader();
       reader.onloadend = file => {
         this.form.photo = reader.result;
@@ -187,8 +186,20 @@ export default {
       reader.readAsDataURL(file);
     },
     publicarCaso() {
-      this.form.post("api/pessoa_perdida");
-      //window.alert("Nada a vers");
+      //this.$Progress.start();
+      this.form
+        .post("api/pessoa_perdida")
+        .then(() => {
+          //this.$Progress.finish();
+          this.form.reset();
+          toast.fire({
+            type: "success",
+            title: "Publicado com sucesso"
+          });
+        })
+        .catch(() => {
+          //this.$Progress.fail();
+        });
     }
   }
 };

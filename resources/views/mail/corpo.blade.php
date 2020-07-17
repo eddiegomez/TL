@@ -1,0 +1,1 @@
+Bem cindo ao curso {{$curso}}

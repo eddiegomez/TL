@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class caso extends Model
 {
-    public $timestamp = 'false';
+    public $timestamp = 'true';
     public $table='caso';
     public $primaryKey='idcaso';
 

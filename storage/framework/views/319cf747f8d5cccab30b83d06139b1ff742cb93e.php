@@ -19,6 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel = "stylesheet" href="/css/bootstrap.min.css">
   <link rel = "stylesheet" href="/perfil/assets/demo.css">
   <link rel = "stylesheet" href="/perfil/assets/light-bootstrap-dashboard.css">
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper" id="app">
@@ -33,39 +34,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-navbar" type="search" @keyup="searchit" v-model="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
+          <button class="btn btn-navbar" @click="searchit">
             <i class="fas fa-search"></i>
           </button>
         </div>
       </div>
-    </form>
   </nav>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4"  style="background-color:#051d39">
     <a href="index3.html" class="brand-link">
       <span class="brand-text font-weight-light">SGPP</span>
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" style="background-color:#051d39">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/imagens/profile_2.png" class="img-circle" style="height:35px;width:35px" alt="User Image">
+          <img src="/imagens/profile.png" class="img-circle" style="height:35px;width:35px" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">
           <?php echo e(Auth::user()->name); ?>
 
-          <br ><h6 style="color: grey">(<?php echo e(Auth::user()->tipo); ?>) </h6>
+          <br ><h6 style="color: grey">(<?php echo e(Auth::user()->email); ?>) </h6>
           </a>
         </div>
+
       </div>
 
       <!-- Sidebar Menu -->
@@ -73,23 +73,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdmin')): ?>
+          <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdmin')): ?>
           <li class="nav-item">
             <router-link to="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-chart-pie text-blue"></i>
               <p>
-                Estratísticas
-                <span class="right badge badge-danger">Novo</span>
+                Estratísticas 
+                <span class="right"><i class="nav-icon fas fa-bell" style="color:red"></i></span>
               </p>
             </router-link>
           </li>
-          <?php endif; ?>
           
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-bookmark"></i>
               <p>
-                Casos
+                Pessoas perdidas
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -97,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <router-link to="/registar" class="nav-link">  
-                  <i class="nav-icon fas fa-plus"></i>
+                  <i class="nav-icon fas fa-user-plus"></i>
                   <p>Registar</p>
                 </router-link>
               </li>
@@ -105,24 +104,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
-              <router-link to="/casos" class="nav-link">
-                  <i class="nav-icon fas fa-users"></i>
-                  <p>Pessoas Perdidas</p>
+              <router-link to="/casosCentros" class="nav-link">
+                  <i class="nav-icon fas fa-home"></i>
+                  <p>Por centros</p>
                 </router-link>
               </li>
             </ul>
 
             <ul class="nav nav-treeview">
               <li class="nav-item">
+              <router-link to="/casosNormalUsers" class="nav-link">
+                  <i class="nav-icon fas fa-user-friends"></i>
+                  <p>Por outros</p>
+                </router-link>
+              </li>
+            </ul>
+
+          </li>
+          
+          <li class="nav-item nav-treeview">
+              <li class="nav-item">
               <router-link to="/encontradas" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
                   <p>Pessoas Encontradas</p>
                 </router-link>
               </li>
-            </ul>
-          </li>
+            </li>
 
-          <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isAdmin')): ?>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-map"></i>
@@ -150,18 +158,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <?php endif; ?>
 
-          <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isUser')): ?>
           <li class="nav-item">
-            <router-link to="/centros" class="nav-link">
-              <i class="nav-icon fas fa-home"></i>
+            <router-link to="/gestor" class="nav-link">
+              <i class="nav-icon fas fa-user-cog"></i>
               <p>
-                Centros de Acolhimento
+                Gestores
               </p>
             </router-link>
           </li>
-          <?php endif; ?>
 
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
@@ -174,26 +179,155 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
           <li class="nav-item">
             <router-link to="/testes" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-cog"></i>
               <p>
                 Testes
               </p>
             </router-link>
           </li>
+          <?php endif; ?>
 
+          <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isGestor')): ?>
+          <li class="nav-item">
+            <router-link to="/dashGestor" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie text-blue"></i>
+              <p>
+                Estratísticas
+                <span class="right badge badge-danger">Novo</span>
+              </p>
+            </router-link>
+          </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-bookmark"></i>
+              <p>
+                Casos
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <router-link to="/registar" class="nav-link">  
+                  <i class="nav-icon fas fa-user-plus"></i>
+                  <p>Registar</p>
+                </router-link>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <router-link to="/casos" class="nav-link">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>Pessoas Perdidas</p>
+                </router-link>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <router-link to="/encontradas" class="nav-link">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>Pessoas Encontradas</p>
+                </router-link>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <router-link to="/gestao" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Gestão
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/profileGestor" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Perfil
+              </p>
+            </router-link>
+          </li>
+          <?php endif; ?>
+
+          <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isNormal')): ?>
+          <li class="nav-item">
+            <router-link to="/registarNormal" class="nav-link">  
+              <i class="nav-icon fas fa-user-plus"></i>
+              <p>Registar pessoa perdida</p>
+            </router-link>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Pessoas Perdidas
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <router-link to="/casosCentros" class="nav-link">
+                  <i class="nav-icon fas fa-home"></i>
+                  <p>Nos centros</p>
+                </router-link>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <router-link to="/casosNormalUsers" class="nav-link">
+                  <i class="nav-icon fas fa-user-friends"></i>
+                  <p>Registado por outros</p>
+                </router-link>
+              </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+              <router-link to="/meus" class="nav-link">
+                  <i class="nav-icon fas fa-user-cog"></i>
+                  <p>Meus registos</p>
+                </router-link>
+              </li>
+            </ul>
+          </li> 
+ 
+          <li class="nav-item">
+            <router-link to="/encontradas" class="nav-link">
+              <i class="nav-icon fas fa-user-check"></i>
+              <p>Pessoas encontradas</p>
+            </router-link>
+          </li>
+
+          <li class="nav-item">
+            <router-link to="/centros_normal" class="nav-link">
+              <i class="nav-icon fas fa-map-marker"></i>
+              <p>Ver Centros</p>
+            </router-link>
+          </li>
           
+          <li class="nav-item">
+            <router-link to="/pesquisa" class="nav-link">
+              <i class="nav-icon fas fa-search"></i>
+              <p>Pesquisa avançada</p>
+            </router-link>
+          </li>
+          <?php endif; ?>
 
           <li class="nav-item">
             <a class="nav-link" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">
-            <i class="nav-icon fas fa-power-off red"></i>
+            <i class="nav-icon fas fa-power-off red" style="color: red"></i>
               <p>
-                <?php echo e(__('Logout')); ?>
-
+                Sair
               </p>
             </a>
-
+              
             <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
               <?php echo csrf_field(); ?>
             </form>
@@ -209,9 +343,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Main content -->
-    <div class="content" style="">
+    <div class="content">
     
       <router-view></router-view>
+      <vue-progress-bar></vue-progress-bar>
     </div>
     <!-- /.content -->
   </div>
@@ -228,17 +363,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer" style="">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Plataforma de busca de pessoas perdidas
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2019 <a href="#">SGPP</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <?php echo date("Y");?> <a href="#">SGPP</a>.</strong> Sujeito a direitos autorais.
   </footer>
 </div>
 <!-- ./wrapper -->
-
 
 <script src="/js/app.js"></script>
 </body>

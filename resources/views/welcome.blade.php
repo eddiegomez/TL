@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Concursos</title>
+        <title>SGPP</title>
 
         <link rel="stylesheet" href="<?php echo asset('assets/css/slick.css')?>"> 
         <link rel="stylesheet" href="<?php echo asset('assets/css/slick-theme.css')?>">
@@ -23,21 +23,27 @@
 
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="<?php echo asset('assets/css/responsive.css')?>" />
+        
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
 
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true">
+    </script>
+    </head>
     </head>
     <body>
-         <!-- Preloader -->
-         <div id="loading"  style="background-color:#1E90FF">
-            <div id="loading-center">
-                <div id="loading-center-absolute">
-                    <div class="object" id="object_one"></div>
-                    <div class="object" id="object_two"></div>
-                    <div class="object" id="object_three"></div>
-                    <div class="object" id="object_four"></div>
-                </div>
-            </div>
-        </div><!--End off Preloader -->
-
 
         <div class="culmn">
             <!--Home page style-->
@@ -99,8 +105,8 @@
                         <div class="top-right links">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#about">Sobre nós</a></li>
-                            <li><a href="#service">Casos</a></li>
-                            <li><a href="#portfolio">Centros de Acolhimento</a></li>
+                            <li><a href="#casos">Casos</a></li>
+                            <li><a href="#centros">Centros de Acolhimento</a></li>
                             <li><a href="#contact">Contactos</a></li>
                             <li><a href="{{ route('register') }}">Registar-se</a></li>
                             <li><a href="{{ route('login') }}">Entrar</a></li>
@@ -120,7 +126,9 @@
             <!--Home Sections-->
 
             <section id="home" class="home bg-black fix"  style="height:0px">
-                <div class="overlay" style="background-image:url('/imagens/covers/1.png'); fixed;"></div>
+                <div class="overlay" style="background-image:url(''); filter:blur(4px)">
+                <img src='/imagens/covers/cover2.jpg' style = "">
+                </div>
                 <div class="container" >
                     <div class="row">
                         <div class="main_home text-center">
@@ -128,23 +136,17 @@
                                 <div class="hello">
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <h1 class=""  style="color:white">Pessoas Perdidas</h1>
+                                            <h1 class="text-uppercase"  style="color:white; text-shadow:3px 3px 5px black;">Pessoas Perdidas</h1>
                                             <h5 class="text-white text-uppercase">Busque por pessoas perdidas de forma facil, rápida e eficiente.</h5>
                                         </div>
                                     </div><!-- End off slid item -->
-
                                 </div>
                             </div>
-
                         </div>
-
-
-                        
-
                     </div><!--End off row-->
                 </div><!--End off container -->
             </section> <!--End off Home Sections-->
-
+            
             <!--About-->
             <section id="about" class="teams roomy-80">
                 <div class="container">
@@ -155,9 +157,7 @@
                                     <div class="head_title">
                                         <h2 class="text-uppercase"> <strong>Sobre </strong>Nós</h2>
                                     </div>
-                                    <p><strong>SGPP </strong> é um projecto que visa dinamizar o <strong>processo de busca de pessoas perdidas  </strong>. Este</p>
-
-
+                                    <p><strong>SGPP </strong>(Sistema de Gestão de Pessoas Perdidas) é um projecto que visa dinamizar o <strong>processo de busca de pessoas perdidas  </strong>. Publicando um caso de desaparecimento, estara criando condicoes para uma maior abrangencia e consequentemente aumentando a probabilidade de fazer com que a pessoa perdida regresse ao seu convivio familiar.</p>                                    
                                 </div>
                             </div>
                             <div class="col-md-5">
@@ -191,107 +191,125 @@
                     </div><!-- End off row -->
                 </div><!-- End off container -->
             </section><!-- End off Team & Skill section -->
- <!--Business Section-->
- <section id="service" class="service bg-grey roomy-70">
+            <!--Business Section-->
+            <section id="casos" class="service bg-grey roomy-70">
                 <div class="container">
                     <div class="row">
                         <div class="main_service">
                             <div class="col-md-6">
-                                <div class="service_slid">
-                                    <div class="slid_shap bg-yellow" style="background-color:#1E90FF"></div>
+                                <div class="service_slid"  style="box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                <!--class="slid_shap bg-yellow" style="background-color:#1E90FF"-->
+                                    <div class="">
+                                    </div>
                                     <div class="service_slid_item text-center">
-                                        <div class="service_slid_text">
-                                            <span class="icon icon icon-tools text-black"></span>
-                                            <h5 class="text-black m-top-20">Publique um concurso</h5>
+                                        @foreach ($pessoas_perdidas as $pessoa_perdida)
+                                        <div class="service_slid_text"  style="height:260px;margin:0px;">
+                                            <div class="com-md-12">
+                                                <div class="col-md-6">
+                                                    <img src="/imagens/pessoas_perdidas/{{$pessoa_perdida->foto}}" class="logo" alt=""  style="height:250px;">
+                                                </div>
+                                                <div class="col-md-6">
+                                                <div class="row">
+                                                    <strong><h4>{{$pessoa_perdida->nome}} {{$pessoa_perdida->apelido}}</h4></strong>
+                                                </div>
+                                                <hr style="top:-20px;position: relative">
+                                                <div class="row" style="top:-30px;position: relative">
+                                                    <div class="col-md-2" style="float-right"><strong><i class="fa fa-calendar"></i></strong></div>
+                                                    <div class="col-md-10" style="float-left">{{$pessoa_perdida->data_nascimento}}</div>
+                                                </div>
+                                                <hr style="top:-50px;position: relative">
+                                                <div class="row" style="top:-60px;position: relative">
+                                                    <div class="col-md-2" style="float-right"><strong><i class="fa fa-phone"></i></strong></div>
+                                                    <div class="col-md-10" style="float-left">+258 {{$pessoa_perdida->celular}}</div>
+                                                </div>
+                                                <hr style="top:-80px;position: relative">
+                                                <div class="row" style="top:-90px;position: relative">
+                                                    <div class="col-md-2" style="float-left"><strong><i class="fa fa-map-marker"></i></strong></div>
+                                                    <div class="col-md-10" style="float-right">{{$pessoa_perdida->provincia}}-Av.{{$pessoa_perdida->avenida}}, {{$pessoa_perdida->numero}}</div>
+                                                </div>
+                                                <hr style="top:-110px;position: relative">
+                                                <div class="row" style="top:-120px;position: relative">
+                                                    <div class="col-md-2" style="float-left"><strong><i class="fa fa-calendar"></i></strong></div>
+                                                    <div class="col-md-10" style="float-right">{{$pessoa_perdida->reg}}</div>
+                                                </div>
+                                                <hr style="top:-140px;position: relative">
+                                                <div class="row" style="top:-150px;position: relative">
+                                                    <button href="" class="btn btn-default" style="padding:0.5rem 2.5rem;">Detalhes</button>
+                                                </div>
+                                                
+                                                </div>
+                                            </div>
                                         </div>
-      
-                                        <div class="service_slid_text"  style="height:85px">
-                                            <img src="/imagens/cadeira.jpg" class="logo" alt=""  style="height:190px">
-                                        </div>
-                                        
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-5 col-md-offset-1">
                                 <div class="service_item sm-m-top-50">
                                     <div class="head_title">
-                                        <h2 class="text-uppercase"><strong>Concursos</strong></h2>
+                                        <h2 class="text-uppercase"><strong>Casos</strong></h2>
                                     </div>
                                     <div class="service_content">
-                                        <h3>Faça uso da plataforma para publicar <strong>concursos</strong> garantindo que os potenciais clientes tenham acesso ao mesmo em tempo real, facilitando a comunicação entre ambos</strong> </h3>
+                                        <h3><strong>Publique</strong> e <strong>pesquise</strong> por casos de <strong>pessoas perdidas</strong>, tornando assim os casos disponiveis para todos os utilizadores que acederem ao sistema.</h3>
+                                        <div class="row">
+                                        <a href="login">
+                                            <button href="" class="btn btn-default m-top-40" data-toggle="modal" data-target="#">Publicar</button>
+                                        </a>
+                                        <a href="login">
+                                            <button href="" class="btn btn-default m-top-40" data-toggle="modal" data-target="#">Ver mais</button>
+                                        </a>
 
-                                        <a href="home2" class="btn btn-default m-top-40">Publicar</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </section><!-- End off Business section -->
 
-
-
-            <section id="portfolio" class="portfolio margin-top-120">
+            
+            <section id="centros" class="portfolio margin-top-120">
 
 <!-- Publicidade-->
 <div class="container">
     <div class="row">
         <div class="main-portfolio roomy-80">
 
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="head_title text-left sm-text-center wow fadeInDown">
-                    <h2>Publicidades</h2>
+                    <h2>Centros de Acolhimento</h2>
                 </div>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="filters-button-group text-right sm-text-center">
-                    <button class="btn button is-checked" data-filter="*">Todas</button>
-                    <button class="btn button" data-filter=".transition">Material de Escritório</button>
-                    <button class="btn button" data-filter=".alkali">Veículos</button>
+                    <button class="btn button is-checked" data-filter="*">Todos</button>
+                    <button class="btn button" data-filter=".transition">Infantarios</button>
+                    <button class="btn button" data-filter=".alkali">Postos Policiais</button>
                 </div>
             </div>
 
 
 
             <div style="clear: both;"></div>
+            <div id="map" style="width:98%;height:500px;"></div>
 
             <div class="grid text-center">
-
-                <div class="grid-item transition metal ium">
-                    <img alt="" src="/imagens/cadeira.jpg">
+            
+                <div class="row col-sm-12 grid-item">
+                    <img alt="" src="/imagens/company.jpg">
                     <div class="grid_hover_area text-center">
                         <div class="girid_hover_text m-top-110">
-                            <h4 class="text-white">Cadeira Giratória MB-C730</h4>
-                            <p class="text-white">Base cromada-Travel Max</p>
-                            <a href="/imagens/cadeira.jpg" class="btn btn-primary popup-img">Ver detalhes</a>
+                            <h4 class="text-white">Universidade Eduardo Mondlane</h4>
+                            <p class="text-white">Centro de Acolhimento</p>
+                            <a href="/imagens/company.jpg" class="btn btn-primary popup-img">Ver detalhes</a>
                         </div>
-                    </div><!-- End off grid Hover area -->
-                </div><!-- End off grid item -->
-
-    
-                <div class="grid-item alkali">
-                    <img alt="" src="/imagens/carro.png">
-                    <div class="grid_hover_area text-center">
-                        <div class="girid_hover_text m-top-50">
-                            <h4 class="text-white">Aluger de Viaturas</h4>
-                            <p class="text-white">Auto-carros, Ligeiros, camioes,e mais</p>
-                            <a href="/imagens/carro.png" class="btn btn-primary popup-img">Ver detalhes</a>
-                        </div>
-                    </div><!-- End off grid Hover area -->
-                </div><!-- End off grid item -->
-
-                <div class="grid-item alkali ar" >
-                    <img alt="" src="/imagens/STSML2.jpg">
-                    <div class="grid_hover_area text-center">
-                        <div class="girid_hover_text m-top-50">
-                            <h4 class="text-white">STSML</h4>
-                            <p class="text-white">Serviços de Reboque e Mecanica</p>
-                            <a href="/imagens/STSML2.jpg" class="btn btn-primary popup-img">Ver detalhes</a>
-                        </div>
-                    </div><!-- End off grid Hover area -->
-                </div><!-- End off grid item -->
-
+                    </div>
+                    
+                </div> 
+                
                 
             </div>
 
@@ -305,14 +323,22 @@
 </div><!-- Portfolio container end -->
 </section><!-- End off portfolio section -->
 
+            <div class="row">
+            {{$i=0}}
+            @foreach ($coordenadas as $coordenada)
+                <?php $i=$i+1; $lat="lat".$i; $long="long".$i;?>
+                <input id='{{$lat}}' hidden value='{{$coordenada->latitude}}'></input>
+                <input id='{{$long}}' hidden value='{{$coordenada->longitude}}'></input>
+                <input id='{{$i}}' hidden value='{{$coordenada->denominacao}}'></input>
+            @endforeach
+                <input id="size" hidden value='{{$i}}'></input>
+            </div>
 
-            <footer id="contact" class="footer action-lage bg-black p-top-80">
+            <footer id="contact" class="footer action-lage bg-black p-top-180">
                 <!--<div class="action-lage"></div>-->
                 <div class="container">
                     <div class="row">
                         <div class="widget_area">
-
-                            
                             <div class="col-md-4">
                                 <div class="widget_item widget_about">
                                     <div class="widget_ab_item m-top-30">
@@ -361,7 +387,7 @@
 
                             <div class="col-md-4">
                             <div class="widget_brand m-top-40">
-                                        <a href="" class="text-uppercase">CONCURSOS </a>
+                                        <a href="" class="text-uppercase">SGPP</a>
                                         <p>Uma forma inovadora de trabalhar.</p>
                                     </div>
                                     <ul class="list-inline m-top-20">
@@ -383,17 +409,38 @@
                             Made with 
                             <i class="fa fa-heart"></i>
                              
-                            2019. All Rights Reserved
+                            2020. All Rights Reserved
                         </p>
                     </div>
                 </div>
             </footer>
-
-
-
-
         </div>
-
+        <script type="text/javascript">
+      var map;
+      var centerPos = new google.maps.LatLng(-25.949738, 32.600217);
+      var zoomLevel = 15;
+      function initialize() {
+        var mapOptions = {
+          center: centerPos,
+          zoom: zoomLevel
+        };
+        map = new google.maps.Map( document.getElementById("map"), mapOptions );
+        var locations = [];
+        var lat = "lat";
+        var long = "long";
+        for (i = 1; i <= document.getElementById("size").value; i++) {
+            locations.push([document.getElementById(i).value, document.getElementById(lat+""+i).value, document.getElementById(long+""+i).value]);
+        }
+        for (i = 0; i < locations.length; i++) {  
+            marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                title: locations[i][0],
+                map: map
+            });
+        }
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
         <!-- JS includes -->
 
         <script src="<?php echo asset('assets/js/vendor/jquery-1.11.2.min.js')?>"></script>
@@ -406,7 +453,6 @@
         <script src="<?php echo asset('assets/js/js.isotope.js')?>"></script>
         <script src="<?php echo asset('assets/js/jquery.collapse.js')?>"></script>
         <script src="<?php echo asset('assets/js/bootsnav.js')?>"></script>
-
         <script src="<?php echo asset('assets/js/plugins.js')?>"></script>
         <script src="<?php echo asset('assets/js/main.js')?>"></script>
     </body>
