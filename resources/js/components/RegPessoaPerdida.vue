@@ -121,7 +121,7 @@
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="photo" class="col-sm-10 text-muted">Fotografia</label>
-                <input type="file" @change="gravarFoto" name="photo" class="form-input" />
+                <input type="file" @change="gravarFoto" ref="file" name="photo" class="form-input"  multiple="multiple"/>
               </div>
             </div>
           </div>

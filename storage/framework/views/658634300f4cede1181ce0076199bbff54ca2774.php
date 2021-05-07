@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>SGPP</title>
-
+        <!-- Favicon -->
+	    <link href="/imagens/fav.png" rel="shortcut icon"/>
         <link rel="stylesheet" href="<?php echo asset('assets/css/slick.css')?>"> 
         <link rel="stylesheet" href="<?php echo asset('assets/css/slick-theme.css')?>">
         <link rel="stylesheet" href="<?php echo asset('assets/css/animate.css')?>">
@@ -38,6 +39,9 @@
         margin: 0;
         padding: 0;
       }
+      #card{
+          padding: 10px 5px;
+      }
     </style>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true">
     </script>
@@ -49,7 +53,7 @@
             <!--Home page style-->
 
 
-            <nav class="navbar navbar-default bootsnav navbar-fixed white">
+            <nav class="navbar navbar-default bootsnav navbar-fixed white" style="box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);">
 
                 <!-- Start Top Search -->
                 <div class="top-search">
@@ -136,8 +140,15 @@
                                 <div class="hello">
                                     <div class="slid_item">
                                         <div class="home_text ">
-                                            <h1 class="text-uppercase"  style="color:white; text-shadow:3px 3px 5px black;">Pessoas Perdidas</h1>
-                                            <h5 class="text-white text-uppercase">Busque por pessoas perdidas de forma facil, rápida e eficiente.</h5>
+                                            <h1 class="text-uppercase"  style="color:white; text-shadow:3px 3px 5px black;"><strong>Pessoas Perdidas</strong></h1>
+                                            <h5 class="text-white text-uppercase">Busque por pessoas perdidas de forma fácil, rápida e eficiente.</h5>
+                                            
+                                            <a href="<?php echo e(route('login')); ?>">
+                                                <button class="btn btn-default m-top-40" style="color:white;">Publicar</button>
+                                            </a>
+                                            <a href="/login">
+                                                <button href="" class="btn btn-default m-top-40" style="color:white">Pessoas Perdidas</button>
+                                            </a>
                                         </div>
                                     </div><!-- End off slid item -->
                                 </div>
@@ -157,7 +168,7 @@
                                     <div class="head_title">
                                         <h2 class="text-uppercase"> <strong>Sobre </strong>Nós</h2>
                                     </div>
-                                    <p><strong>SGPP </strong>(Sistema de Gestão de Pessoas Perdidas) é um projecto que visa dinamizar o <strong>processo de busca de pessoas perdidas  </strong>. Publicando um caso de desaparecimento, estara criando condicoes para uma maior abrangencia e consequentemente aumentando a probabilidade de fazer com que a pessoa perdida regresse ao seu convivio familiar.</p>                                    
+                                    <p><strong>SGPP </strong>(Sistema de Gestão de Pessoas Perdidas) é um projecto que visa dinamizar o <strong>processo de busca de pessoas perdidas  </strong>. Publicando um caso de desaparecimento, estará criando condições para uma maior abrangência e consequentemente aumentando a probabilidade de fazer com que a pessoa perdida regresse ao seu convivio familiar.</p>                                    
                                 </div>
                             </div>
                             <div class="col-md-5">
@@ -175,7 +186,7 @@
                                         </div><!-- End off col-md-4 -->
                                         
                                         <div class="col-sm-6">
-                                            <img src="" alt="" class="img-circle" />
+                                            <img src="/imagens/company.jpg" alt="" class="img-circle" />
                                             <h4 class="m-top-20">UEM</strong></h4>
                                             <div class="separator"></div>
                                             <ul class="list-inline">
@@ -201,40 +212,47 @@
                                 <!--class="slid_shap bg-yellow" style="background-color:#1E90FF"-->
                                     <div class="">
                                     </div>
-                                    <div class="service_slid_item text-center">
+                                    <div id="card" class="service_slid_item text-center">
                                         <?php $__currentLoopData = $pessoas_perdidas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pessoa_perdida): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                        <div class="service_slid_text"  style="height:260px;margin:0px;">
+                                        <div class="service_slid_text"  style="height:305px;margin:0px;">
                                             <div class="com-md-12">
                                                 <div class="col-md-6">
-                                                    <img src="/imagens/pessoas_perdidas/<?php echo e($pessoa_perdida->foto); ?>" class="logo" alt=""  style="height:250px;">
+                                                    <img src="/imagens/pessoas_perdidas/<?php echo e($pessoa_perdida->foto); ?>" class="logo" alt=""  style="height:300px;">
                                                 </div>
                                                 <div class="col-md-6">
                                                 <div class="row">
                                                     <strong><h4><?php echo e($pessoa_perdida->nome); ?> <?php echo e($pessoa_perdida->apelido); ?></h4></strong>
                                                 </div>
-                                                <hr style="top:-20px;position: relative">
+                                                <hr style="top:15px;position: relative">
                                                 <div class="row" style="top:-30px;position: relative">
                                                     <div class="col-md-2" style="float-right"><strong><i class="fa fa-calendar"></i></strong></div>
-                                                    <div class="col-md-10" style="float-left"><?php echo e($pessoa_perdida->data_nascimento); ?></div>
+                                                    <div class="col-md-10" style="float-left"><?php $d=strtotime($pessoa_perdida->data_nascimento); echo date("d-m-Y", $d) ; ?></div>
                                                 </div>
-                                                <hr style="top:-50px;position: relative">
+                                                <hr style="top:5px;position: relative">
                                                 <div class="row" style="top:-60px;position: relative">
-                                                    <div class="col-md-2" style="float-right"><strong><i class="fa fa-phone"></i></strong></div>
-                                                    <div class="col-md-10" style="float-left">+258 <?php echo e($pessoa_perdida->celular); ?></div>
+                                                    <div class="col-md-2" style="float-left"><strong><i class="fa fa-home"></i></strong></div>
+                                                    <div class="col-md-10" style="float-right"><?php echo e($pessoa_perdida->denominacao); ?></div>
                                                 </div>
-                                                <hr style="top:-80px;position: relative">
+                                                <hr style="top:-25px;position: relative">
                                                 <div class="row" style="top:-90px;position: relative">
                                                     <div class="col-md-2" style="float-left"><strong><i class="fa fa-map-marker"></i></strong></div>
                                                     <div class="col-md-10" style="float-right"><?php echo e($pessoa_perdida->provincia); ?>-Av.<?php echo e($pessoa_perdida->avenida); ?>, <?php echo e($pessoa_perdida->numero); ?></div>
                                                 </div>
-                                                <hr style="top:-110px;position: relative">
+                                                <hr style="top:-75px;position: relative">
                                                 <div class="row" style="top:-120px;position: relative">
-                                                    <div class="col-md-2" style="float-left"><strong><i class="fa fa-calendar"></i></strong></div>
-                                                    <div class="col-md-10" style="float-right"><?php echo e($pessoa_perdida->reg); ?></div>
+                                                    <div class="col-md-2" style="float-right"><strong><i class="fa fa-phone"></i></strong></div>
+                                                    <div class="col-md-10" style="float-left">+258 <?php echo e($pessoa_perdida->celular); ?></div>
                                                 </div>
-                                                <hr style="top:-140px;position: relative">
+                                                <hr style="top:-105px;position: relative">
                                                 <div class="row" style="top:-150px;position: relative">
-                                                    <button href="" class="btn btn-default" style="padding:0.5rem 2.5rem;">Detalhes</button>
+                                                    <div class="col-md-2" style="float-left"><strong><i class="fa fa-edit"></i></strong></div>
+                                                    <div class="col-md-10" style="float-right"><?php $d=strtotime($pessoa_perdida->reg); echo date("d-m-Y", $d) ; ?></div>
+                                                </div>
+                                                <hr style="top:-15px;position: relative">
+                                                <div class="row" style="top:-180px;position: relative">
+                                                    <a href="/detalhes/<?php echo $pessoa_perdida->idpessoa_perdida; ?>">
+                                                        <!--<button href="" class="btn btn-default" style="padding:0.5rem 2.5rem;">Detalhes</button>-->
+                                                    </a>
                                                 </div>
                                                 
                                                 </div>
@@ -253,9 +271,9 @@
                                         <h3><strong>Publique</strong> e <strong>pesquise</strong> por casos de <strong>pessoas perdidas</strong>, tornando assim os casos disponiveis para todos os utilizadores que acederem ao sistema.</h3>
                                         <div class="row">
                                         <a href="login">
-                                            <button href="" class="btn btn-default m-top-40" data-toggle="modal" data-target="#">Publicar</button>
+                                            <button href="<?php echo e(route('login')); ?>" class="btn btn-default m-top-40" data-toggle="modal" data-target="#">Publicar</button>
                                         </a>
-                                        <a href="login">
+                                        <a href="<?php echo e(route('login')); ?>">
                                             <button href="" class="btn btn-default m-top-40" data-toggle="modal" data-target="#">Ver mais</button>
                                         </a>
 
@@ -287,6 +305,7 @@
                 <div class="filters-button-group text-right sm-text-center">
                     <button class="btn button is-checked" data-filter="*">Todos</button>
                     <button class="btn button" data-filter=".transition">Infantarios</button>
+                    <button class="btn button" data-filter=".alkali">ONG</button>
                     <button class="btn button" data-filter=".alkali">Postos Policiais</button>
                 </div>
             </div>
@@ -298,7 +317,7 @@
 
             <div class="grid text-center">
             
-                <div class="row col-sm-12 grid-item">
+               <!-- <div class="row col-sm-12 grid-item">
                     <img alt="" src="/imagens/company.jpg">
                     <div class="grid_hover_area text-center">
                         <div class="girid_hover_text m-top-110">
@@ -308,7 +327,7 @@
                         </div>
                     </div>
                     
-                </div> 
+                </div> -->
                 
                 
             </div>

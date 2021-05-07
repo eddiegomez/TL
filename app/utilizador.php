@@ -16,6 +16,6 @@ class utilizador extends Model
      * @var array
      */
     protected $fillable = [
-        'nome', 'data_nascimento', 'ocupacao', 'nacionalidade', 'naturalidade', 'tipo_utilizador_idtipo_utilizador', 'users_id', 'contacto_idcontacto', 'foto_idfoto', 'endereco_idendereco'
+        'nome','apelido', 'data_nascimento', 'ocupacao', 'nacionalidade', 'naturalidade', 'tipo_utilizador_idtipo_utilizador', 'users_id', 'contacto_idcontacto', 'foto_idfoto', 'endereco_idendereco'
     ];
 }

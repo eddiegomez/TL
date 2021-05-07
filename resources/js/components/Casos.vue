@@ -559,7 +559,7 @@ export default {
     actualizar() {
       /*this.$Progress.start();
       this.form
-        .put("api/pessoa_perdida" + pessoa_perdida.idpessoa_perdida)
+        .put("api/pessoa_perdida/" + pessoa_perdida.idpessoa_perdida)
         .then(() => {
           this.$Progress.finish();
           this.buscarCasos();

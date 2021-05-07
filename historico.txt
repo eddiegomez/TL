@@ -1,0 +1,500 @@
+    3  code ./
+    4  php artisan serve
+    5  php artisan make:auth
+    6  php artisan make auth
+    7  //
+    8  php artisan make:auth
+    9  cd ../test
+   10  cd ../
+   11  ls
+   12  cd testes
+   13  php artisan make:auth
+   14  php artisan serve
+   15  php artisan serve
+   16  php artisan serve
+   17  php artisan make:auth
+   18  composer global require "laravel/installer=~1.1"
+   19  php artisan make:auth
+   20  composer update
+   21  php artisan serve
+   22  php artisan migrate
+   23  php artisan migrate
+   24  php artisan migrate
+   25  php artisan migrate
+   26  php artisan migrate
+   27  php artisan migrate
+   28  php artisan migrate
+   29  php artisan migrate
+   30  php artisan ui bootstrap --auth
+   31  php artisan migrate
+   32  php artisan migrate
+   33  php artisan migrate
+   34  php artisan serve
+   35  php artisan serve
+   36  php -v
+   37  php artisan serve
+   38  php artisan make:auth
+   39  composer global require "laravel/installer=~1.1"
+   40  php artisan make:auth
+   41  php artisan --version
+   42  php artisan ui vue --auth
+   43  php artisan ui:auth
+   44  composer require laravel/ui
+   45  php artisan serve
+   46  php artisan ui:auth
+   47  php artisan serve
+   48  php artisan ui:auth --views
+   49  php artisan serve
+   50  composer require laravel/ui --dev
+   51  php artisan ui bootstrapp
+   52  php artisan ui bootstrap
+   53  npm install & npm run dev
+   54  npm install
+   55  npm run watch
+   56  php artisan ui bootstrap --auth
+   57  npm run watch
+   58  npm run watch
+   59  npm run dev
+   60  npm install
+   61  npm run watch
+   62  npm run watch
+   63  php artisan serve
+   64  php artisan serve
+   65  code ./
+   66  code ./
+   67  code ./
+   68  php artisan serve
+   69  npm run watch
+   70  npm run watch
+   71  code .-
+   72  code .-
+   73  code ./
+   74  php artisan serve
+   75  php artisan serve
+   76  history
+   77  php artisan config:cache
+   78  php artisan config:cache
+   79  php artisan config:cache
+   80  cd ../testes
+   81  php artisan config:cache
+   82  cd ../
+   83  cd /webmail
+   84  cd webmail
+   85  composer require guzzlehttp/guzzle
+   86  npm install admin-lte@v3.0.0-alpha.2 --save
+   87  npm install admin-lte@v3.0.0-alpha.2 --save
+   88  npm install admin-lte@v3.0.0-alpha.2 --save
+   89  npm install
+   90  npm install admin-lte@v3.0.0-alpha.2 --save
+   91  code ./
+   92  $ npm install admin-lte@v3.0.0-alpha.2 --save
+   93  git remote add origin https://github.com/eddiegomez/webmail.git
+   94  git push -u orign master
+   95  git config --global user.name "Edson Gomes"
+   96  git config --global user.email edsongomex@gmail.com
+   97  git push -u orign master
+   98  git push -u orign master
+   99  git config --list --show-origin
+  100  git config --list 
+  101  code ./
+  102  code ./
+  103  php artisan serve
+  104  php artisan serve
+  105  make dev-setup
+  106  code ./
+  107  php artisan serve
+  108  php artisan serve
+  109  code ./
+  110  php artisan serve
+  111  git init
+  112  git add .
+  113  git commit -m "Upload"
+  114  git push origin master
+  115  git init
+  116  git add .
+  117  git commit -m "first commit"
+  118  git remote add origin https://github.com/eddiegomez/SGPP.git
+  119  git push -u origin master
+  120                  
+  121  git init
+  122  git add .
+  123  git commit -m "first commit"
+  124  git remote add origin https://github.com/eddiegomez/MSS.git
+  125  git push -u origin master
+  126  code ./
+  127  php artisan serve
+  128  php artisan serve
+  129  code ./
+  130  history | grep intervention
+  131  history | grep image
+  132  php composer.phar require intervention/image
+  133  code ./
+  134  code ./
+  135  code ./
+  136  php artisan serve
+  137  code ./
+  138  code ./
+  139  php artisan serve
+  140  code ./
+  141  php artisan serve
+  142  code .
+  143  php artisan serve
+  144  php artisan key:generate
+  145  php artisan migrate
+  146  php artisan migrate
+  147  php artisan migrate
+  148  php artisan db:seed --class=ProductsSeeder
+  149  php artisan serve
+  150  code .
+  151  history | grep route
+  152  history | grep route
+  153  history | grep rou
+  154  php artisan serve
+  155  php artisan serve
+  156  php artisan vendor:publish
+  157  code .
+  158  php artisan serve
+  159  code ./
+  160  code ./
+  161  php artisan serve
+  162  code ./
+  163  php artisan serve
+  164  php artisan serve
+  165  php artisan make:middleware IsAdmin
+  166  php artisan make:middleware IsNormal
+  167  php artisan make:middleware IsGestor
+  168  code .
+  169  code ./
+  170  php artisan serve
+  171  composer require barryvdh/laravel-dompdf
+  172  composer require barryvdh/laravel-dompdf
+  173  code
+  174  php artisan serve
+  175  code .
+  176  php artisan serve
+  177  php artisan serve
+  178  git init
+  179  git clone D:\EDDY\UEM\repositorio
+  180  git add texte.txt
+  181  git add teste.txt.txt 
+  182  ls
+  183  git add teste.txt 
+  184  git add *
+  185  git commit -m "Adicionei outro ficheiro"
+  186  git push orign master
+  187  cd ..
+  188  cd repositorio/
+  189  git push orign master
+  190  cd ..
+  191  cd teste/
+  192  git push orign master
+  193  git push
+  194  git push D:\EDDY\UEM\repositorio
+  195  git push D:\EDDY\UEM\repositorio master
+  196  git push D:\EDDY\UEM\teste master
+  197  git remote add orign D:\EDDY\UEM\repositorio
+  198  git push orign master
+  199  git remote add orign D:\EDDY\UEM\teste
+  200  git remote add orign D:\EDDY\UEM\teste
+  201  git commit -m "Adicionei outro ficheiro"
+  202  git add *
+  203  git init
+  204  cd ..
+  205  cd repositorio/
+  206  git clone D:\EDDY\UEM\teste
+  207  git add *
+  208  cd EDDYUEMteste/
+  209  git add *
+  210  cd ..
+  211  git add *
+  212  code .
+  213  php artisan serve
+  214  php artisan serve
+  215  git clone D:\EDDY\Testes\Teste
+  216  cd ..
+  217  ls
+  218  cd Teste/
+  219  ls
+  220  git add *
+  221  git init
+  222  git add *
+  223  git -m "inicializar"
+  224  git commit -m "inicializar"
+  225  git remote add orign D:\EDDY\Testes\Repo\EDDYTestesTeste
+  226  git push origin master
+  227  git init
+  228  git push origin master
+  229  git remote add origin D:\EDDY\Testes\Repo\EDDYTestesTeste
+  230  git push origin master
+  231  git commit -m "inicializar"
+  232  git log
+  233  cd
+  234  git pull
+  235  git init
+  236  ls
+  237  git add documento.txt 
+  238  git commit -m "Novo"
+  239  git push origin master
+  240  git log
+  241  ls
+  242  git init
+  243  git pull
+  244  git add Repositorio1/
+  245  git commit -m "Nova pasta"
+  246  git log
+  247  git commit -m "Nova pasta"
+  248  git add *
+  249  git commit -m "Novos"
+  250  git log
+  251  git push
+  252  git push orign master
+  253  git pull
+  254  git pull master
+  255  git pull origin master
+  256  git clone D:\EDDY\Testes\Repo
+  257  git pull
+  258  git push orign master
+  259  git init
+  260  git push orign master
+  261  git push
+  262  ls
+  263  cd EDDYTestesRepo/
+  264  git push
+  265  git clone C:\Users\Gomes\Documents\Github\Desenvolvimento
+  266  cd UsersGomesDocumentsGithubDesenvolvimento/
+  267  git add .
+  268  git add ficheiro.txt 
+  269  git commit -m "Inicial"
+  270  git push
+  271  git init
+  272  git push
+  273  git push
+  274  git init
+  275  code ./
+  276  code .
+  277  php artisan serve
+  278  cd ..
+  279  cd webmail/
+  280  php artisan serve
+  281  code .
+  282  php artisan serve
+  283  code .
+  284  php artisan serve
+  285  git version
+  286  git init
+  287  touch app.js
+  288  touch index.html
+  289  git status
+  290  git add *
+  291  git status
+  292  git rm --cached
+  293  git rm --cached *
+  294  git status
+  295  git add *
+  296  git status
+  297  git commit -m 'Novas funcionalidades'
+  298  git status
+  299  git status
+  300  git commit -a 'new feature'
+  301  git commit -a
+  302  git status
+  303  man git
+  304  git branch login
+  305  git branch customize
+  306  git checkout login
+  307  git status
+  308  git checkout master
+  309  git status
+  310  git checkout login
+  311  git status
+  312  git checkout master
+  313  git status
+  314  git show-branch
+  315  git merge --help
+  316  code .
+  317  code .
+  318  php artisan serve
+  319  code .
+  320  code .
+  321  php artisan serve
+  322  php artisan serve
+  323  code .
+  324  code ./
+  325  php artisan serve
+  326  php artisan serve
+  327  code .
+  328  php artisan serve
+  329  code .
+  330  code ./
+  331  php artisan serve
+  332  code
+  333  php artisan serve
+  334  php artisan serve
+  335  code .
+  336  code .
+  337  php artisan serve
+  338  code .
+  339  php artisan serve
+  340  code .
+  341  php artisan serve
+  342  code .
+  343  php artisan serve
+  344  php artisan serve
+  345  code .
+  346  php artisan serve
+  347  code .
+  348  php artisan serve
+  349  php artisan serve
+  350  code .
+  351  php artisan serve
+  352  #!/bin/sh
+  353  # Licensed to the Apache Software Foundation (ASF) under one or more
+  354  # contributor license agreements.  See the NOTICE file distributed with
+  355  # this work for additional information regarding copyright ownership.
+  356  # The ASF licenses this file to You under the Apache License, Version 2.0
+  357  # (the "License"); you may not use this file except in compliance with
+  358  # the License.  You may obtain a copy of the License at
+  359  #
+  360  #     http://www.apache.org/licenses/LICENSE-2.0
+  361  #
+  362  # Unless required by applicable law or agreed to in writing, software
+  363  # distributed under the License is distributed on an "AS IS" BASIS,
+  364  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  365  # See the License for the specific language governing permissions and
+  366  # limitations under the License.
+  367  # -----------------------------------------------------------------------------
+  368  # Start Script for the CATALINA Server
+  369  # -----------------------------------------------------------------------------
+  370  # Better OS/400 detection: see Bugzilla 31132
+  371  os400=false
+  372  case "`uname`" in OS400*) os400=true;; esac
+  373  # resolve links - $0 may be a softlink
+  374  PRG="$0"
+  375  while [ -h "$PRG" ] ; do   ls=`ls -ld "$PRG"`;   link=`expr "$ls" : '.*-> \(.*\)$'`;   if expr "$link" : '/.*' > /dev/null; then     PRG="$link";   else     PRG=`dirname "$PRG"`/"$link";   fi; done
+  376  PRGDIR=`dirname "$PRG"`
+  377  EXECUTABLE=catalina.sh
+  378  # Check that target executable exists
+  379  if $os400; then   eval; else   if [ ! -x "$PRGDIR"/"$EXECUTABLE" ]; then     echo "Cannot find $PRGDIR/$EXECUTABLE";     echo "The file is absent or does not have execute permission";     echo "This file is needed to run this program";     exit 1;   fi; fi
+  380  exec "$PRGDIR"/"$EXECUTABLE" start "$@"
+  381  #!/bin/sh
+  382  # Licensed to the Apache Software Foundation (ASF) under one or more
+  383  # contributor license agreements.  See the NOTICE file distributed with
+  384  # this work for additional information regarding copyright ownership.
+  385  # The ASF licenses this file to You under the Apache License, Version 2.0
+  386  # (the "License"); you may not use this file except in compliance with
+  387  # the License.  You may obtain a copy of the License at
+  388  #
+  389  #     http://www.apache.org/licenses/LICENSE-2.0
+  390  #
+  391  # Unless required by applicable law or agreed to in writing, software
+  392  # distributed under the License is distributed on an "AS IS" BASIS,
+  393  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  394  # See the License for the specific language governing permissions and
+  395  # limitations under the License.
+  396  # -----------------------------------------------------------------------------
+  397  # Start Script for the CATALINA Server
+  398  # -----------------------------------------------------------------------------
+  399  # Better OS/400 detection: see Bugzilla 31132
+  400  os400=false
+  401  case "`uname`" in OS400*) os400=true;; esac
+  402  # resolve links - $0 may be a softlink
+  403  PRG="$0"
+  404  while [ -h "$PRG" ] ; do   ls=`ls -ld "$PRG"`;   link=`expr "$ls" : '.*-> \(.*\)$'`;   if expr "$link" : '/.*' > /dev/null; then     PRG="$link";   else     PRG=`dirname "$PRG"`/"$link";   fi; done
+  405  PRGDIR=`dirname "$PRG"`
+  406  EXECUTABLE=catalina.sh
+  407  # Check that target executable exists
+  408  if $os400; then   eval; else   if [ ! -x "$PRGDIR"/"$EXECUTABLE" ]; then     echo "Cannot find $PRGDIR/$EXECUTABLE";     echo "The file is absent or does not have execute permission";     echo "This file is needed to run this program";     exit 1;   fi; fi
+  409  exec "$PRGDIR"/"$EXECUTABLE" start "$@"
+  410  #!/bin/sh
+  411  # Licensed to the Apache Software Foundation (ASF) under one or more
+  412  # contributor license agreements.  See the NOTICE file distributed with
+  413  # this work for additional information regarding copyright ownership.
+  414  # The ASF licenses this file to You under the Apache License, Version 2.0
+  415  # (the "License"); you may not use this file except in compliance with
+  416  # the License.  You may obtain a copy of the License at
+  417  #
+  418  #     http://www.apache.org/licenses/LICENSE-2.0
+  419  #
+  420  # Unless required by applicable law or agreed to in writing, software
+  421  # distributed under the License is distributed on an "AS IS" BASIS,
+  422  # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  423  # See the License for the specific language governing permissions and
+  424  # limitations under the License.
+  425  # -----------------------------------------------------------------------------
+  426  # Start Script for the CATALINA Server
+  427  # -----------------------------------------------------------------------------
+  428  # Better OS/400 detection: see Bugzilla 31132
+  429  os400=false
+  430  case "`uname`" in OS400*) os400=true;; esac
+  431  # resolve links - $0 may be a softlink
+  432  PRG="$0"
+  433  while [ -h "$PRG" ] ; do   ls=`ls -ld "$PRG"`;   link=`expr "$ls" : '.*-> \(.*\)$'`;   if expr "$link" : '/.*' > /dev/null; then     PRG="$link";   else     PRG=`dirname "$PRG"`/"$link";   fi; done
+  434  PRGDIR=`dirname "$PRG"`
+  435  EXECUTABLE=catalina.sh
+  436  # Check that target executable exists
+  437  if $os400; then   eval; else   if [ ! -x "$PRGDIR"/"$EXECUTABLE" ]; then     echo "Cannot find $PRGDIR/$EXECUTABLE";     echo "The file is absent or does not have execute permission";     echo "This file is needed to run this program";     exit 1;   fi; fi
+  438  exec "$PRGDIR"/"$EXECUTABLE" start "$@"
+  439  #!/bin/sh
+  440  export CATALINA_HOME="$(dirname "$0")/server/apache-tomcat-9.0.36"
+  441  UNAME=`which uname`
+  442  if [ -n "$UNAME" -a "`$UNAME`" = "Darwin" ]; then 	BROWSERS="open"; else 	BROWSERS="xdg-open gnome-www-browser x-www-browser firefox chromium chromium-browser google-chrome"; fi
+  443  echo "starting camunda BPM platform on Tomcat Application Server";
+  444  if [ -z "$BROWSER" ]; then   for executable in $BROWSERS; do     BROWSER=`which $executable 2> /dev/null`;     if [ -n "$BROWSER" ]; then       break;     fi;   done; fi
+  445  if [ -z "$BROWSER" ]; then   (sleep 15; echo -e "We are sorry... We tried all we could do but we couldn't locate your default browser... \nIf you want to see our default website please open your browser and insert this URL:\nhttp://localhost:8080/camunda-welcome/index.html";) & else   (sleep 5; $BROWSER "http://localhost:8080/camunda-welcome/index.html";) & fi
+  446  /bin/sh "$(dirname "$0")/server/apache-tomcat-9.0.36/bin/startup.sh"
+  447  #!/bin/sh
+  448  export CATALINA_HOME="$(dirname "$0")/server/apache-tomcat-9.0.36"
+  449  UNAME=`which uname`
+  450  if [ -n "$UNAME" -a "`$UNAME`" = "Darwin" ]; then 	BROWSERS="open"; else 	BROWSERS="xdg-open gnome-www-browser x-www-browser firefox chromium chromium-browser google-chrome"; fi
+  451  echo "starting camunda BPM platform on Tomcat Application Server";
+  452  if [ -z "$BROWSER" ]; then   for executable in $BROWSERS; do     BROWSER=`which $executable 2> /dev/null`;     if [ -n "$BROWSER" ]; then       break;     fi;   done; fi
+  453  if [ -z "$BROWSER" ]; then   (sleep 15; echo -e "We are sorry... We tried all we could do but we couldn't locate your default browser... \nIf you want to see our default website please open your browser and insert this URL:\nhttp://localhost:8080/camunda-welcome/index.html";) & else   (sleep 5; $BROWSER "http://localhost:8080/camunda-welcome/index.html";) & fi
+  454  /bin/sh "$(dirname "$0")/server/apache-tomcat-9.0.36/bin/startup.sh"
+  455  #!/bin/sh
+  456  export CATALINA_HOME="$(dirname "$0")/server/apache-tomcat-9.0.36"
+  457  UNAME=`which uname`
+  458  if [ -n "$UNAME" -a "`$UNAME`" = "Darwin" ]; then 	BROWSERS="open"; else 	BROWSERS="xdg-open gnome-www-browser x-www-browser firefox chromium chromium-browser google-chrome"; fi
+  459  echo "starting camunda BPM platform on Tomcat Application Server";
+  460  if [ -z "$BROWSER" ]; then   for executable in $BROWSERS; do     BROWSER=`which $executable 2> /dev/null`;     if [ -n "$BROWSER" ]; then       break;     fi;   done; fi
+  461  if [ -z "$BROWSER" ]; then   (sleep 15; echo -e "We are sorry... We tried all we could do but we couldn't locate your default browser... \nIf you want to see our default website please open your browser and insert this URL:\nhttp://localhost:8080/camunda-welcome/index.html";) & else   (sleep 5; $BROWSER "http://localhost:8080/camunda-welcome/index.html";) & fi
+  462  /bin/sh "$(dirname "$0")/server/apache-tomcat-9.0.36/bin/startup.sh"
+  463  bower install heatmap.js-amd
+  464  npm install heatmap.js
+  465  python -m SimpleHTTPServer 1337 &
+  466  sudo python -m SimpleHTTPServer 1337 &
+  467  #!/bin/sh
+  468  export CATALINA_HOME="$(dirname "$0")/server/apache-tomcat-9.0.36"
+  469  UNAME=`which uname`
+  470  if [ -n "$UNAME" -a "`$UNAME`" = "Darwin" ]; then 	BROWSERS="open"; else 	BROWSERS="xdg-open gnome-www-browser x-www-browser firefox chromium chromium-browser google-chrome"; fi
+  471  echo "starting camunda BPM platform on Tomcat Application Server";
+  472  if [ -z "$BROWSER" ]; then   for executable in $BROWSERS; do     BROWSER=`which $executable 2> /dev/null`;     if [ -n "$BROWSER" ]; then       break;     fi;   done; fi
+  473  if [ -z "$BROWSER" ]; then   (sleep 15; echo -e "We are sorry... We tried all we could do but we couldn't locate your default browser... \nIf you want to see our default website please open your browser and insert this URL:\nhttp://localhost:8080/camunda-welcome/index.html";) & else   (sleep 5; $BROWSER "http://localhost:8080/camunda/app/welcome/default/#!/login";) & fi
+  474  /bin/sh "$(dirname "$0")/server/apache-tomcat-9.0.36/bin/startup.sh"
+  475  code .
+  476  php artisan serve
+  477  code .
+  478  php artisan serve
+  479  code .
+  480  php artisan serve
+  481  php artisan serve
+  482  php artisan serve
+  483  php artisan serve
+  484  php artisan serve
+  485  npm run watch
+  486  code .
+  487  npm run watch
+  488  php artisan serve
+  489  code .
+  490  php artisan serve
+  491  history
+  492  history >> historico.txt
+  493  echo "edson gomes"
+  494  "edson gomes" >> historico.txt 
+  495  echo "edson gomes" >> historico.txt 
+  496  history >> historico.txt
+  497  code .
+  498  php serve
+  499  php artisan serve
+  500  history
+  501  hostory > historico.txt
+  502  history > historico.txt

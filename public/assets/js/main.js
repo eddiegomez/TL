@@ -131,9 +131,9 @@ jQuery( document ).ready( function ( $ ) {
 
 $( function () {
     // Initialize Isotope
-    var $notes = $( ".grid" ).isotope( {
+    /*var $notes = $( ".grid" ).isotope( {
         itemSelector: ".grid-item"
-    } );
+    } );*/
 
     // On filter button click
     $( ".filters-button-group .btn" ).on( "click", function ( e ) {

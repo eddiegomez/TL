@@ -28,20 +28,18 @@
           </span>
           <div class="info-box-content">
             <span class="info-box-text">Pessoas Encontradas</span>
-            <span class="info-box-number" id="p_perdidas"></span>
+            <span class="info-box-number" id="p_encontradas"></span>
           </div>
           <!-- /.info-box-content -->
         </div>
         <!-- /.info-box -->
       </div>
       <!-- /.col -->
-
-      
     <!-- /.col -->
     </div>
     <div class="row">
       <div class="Chart col-sm-12">
-        <h2>Linechart</h2>
+        <h2>Relatorios</h2>
         <line-example></line-example>
       </div>
     </div>
@@ -49,7 +47,7 @@
 </template>
 
 <script>
-import LineExample from "./Charts/LineChart.js";
+import LineExample from "./Charts/LineChartGestor.js";
 export default {
   name: "tes",
   components: {
@@ -58,9 +56,9 @@ export default {
 
   methods: {
     estatisticas() {
-      axios.get("api/dash").then(({ data }) => {
+      axios.get("api/dash_gestor").then(({ data }) => {
         document.getElementById("p_perdidas").innerHTML = data.pessoasPerdidas;
-        document.getElementById("gestores").innerHTML = data.gestores;
+        document.getElementById("p_encontradas").innerHTML = data.pessoasEncontradas;
       });
     }
   },

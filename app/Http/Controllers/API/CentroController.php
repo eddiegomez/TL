@@ -23,16 +23,20 @@ class CentroController extends Controller
      */
     public function index()
     {
-
-        return DB::table('centro')
+        $index=0;
+        $centros = DB::table('centro') 
             ->leftJoin('endereco', 'endereco.idendereco', '=', 'centro.endereco_idendereco')
             ->leftJoin('contacto', 'contacto.idcontacto', '=', 'centro.contacto_idcontacto')
             //->leftJoin('endereco', 'endereco.coordenadas_idcoordenadas', '=', 'coordenadas.idcoordenadas')
             ->leftJoin('tipo_centro', 'tipo_centro.idtipo_centro', '=', 'centro.tipo_centro_idtipo_centro')
             ->leftJoin('utilizador', 'utilizador.idutilizador', '=', 'centro.utilizador_idutilizador')
-            ->select('centro.*','utilizador.*','tipo_centro.tipo')
+            ->leftJoin('caso', 'caso.centro_idcentro', '=', 'centro.idcentro')
+            ->select('centro.denominacao')
             ->where('centro.utilizador_idutilizador','=',2)
             ->get();
+            return  DB::table('centro')->distinct('centro_idcentro')
+            ->leftJoin('caso', 'caso.centro_idcentro', '=', 'centro.idcentro')
+            ->select('centro.denominacao')->get();
     }
 
     public function buscarTipos()
@@ -97,7 +101,6 @@ class CentroController extends Controller
             'tipo_centro_idtipo_centro' => $request['tipo'],
             'endereco_idendereco' => $endereco->idendereco, 
             'contacto_idcontacto' => $contacto->idcontacto,
-            'utilizador_idutilizador' => 2
         ]);
     }
 

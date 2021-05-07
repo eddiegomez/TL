@@ -42,6 +42,19 @@ class dashController extends Controller
 
     }
 
+    public function gestor()
+    {
+        $pessoa_perdida = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->get();
+        $pessoa_encontrada = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->get();
+        
+        $nr = [
+            'pessoasEncontradas'=> $pessoa_encontrada->count(),
+            'pessoasPerdidas'=> $pessoa_perdida->count(),
+        ];
+        return $nr;
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

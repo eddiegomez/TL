@@ -108,7 +108,13 @@ class pessoaPerdidaController extends Controller
             'nacionalidade' => $request['nacionalidade'],
             'naturalidade' => $request['naturalidade'],
             'obs' => $request['obs'],
+            'tipo' => 'centro',
             'foto_idfoto' => $foto->idfoto
+        ]);
+
+        $foto = foto::create([
+            'foto' => $photo,
+            'pessoa_perdida_idpessoa_perdida' => $pessoa_perdida->idpessoa_perdida
         ]);
 
         return caso::create([
@@ -116,10 +122,10 @@ class pessoaPerdidaController extends Controller
             'utilizador_idutilizador' => 2,
             'coordenadas_idcoordenadas' => 1,
             'centro_idcentro' => 1
-            ]);
+        ]);
             
             
-        }
+    }
 
     /**
      * Display the specified resource.

@@ -7,21 +7,20 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SGPP') }}</title>
+    <title>SGPP</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- Favicon -->
+    <link href="/imagens/fav.png" rel="shortcut icon"/>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" style="box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                   <img src="/imagens/logo.png" class="logo" alt="" style="width:250px;position:relative">
@@ -41,9 +40,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item"><a class="nav-link" href="/">Página inicial</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/">Sobre nós</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            
+                            @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -53,16 +52,26 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item"><a class="nav-link" href="/desaparecidos">Pessoas perdidas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/reg_pessoa_perdida">Registar pessoa perdida</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/meus_registos/{{ Auth::user()->id}}">Meus registos</a></li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }}
+                                    <?php session()->put('user', Auth::user()->id); ?>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="">
+                                        <i class="nav-icon fa fa-envelope"></i> {{ Auth::user()->email }}
+                                    </a>
+                                    <a class="dropdown-item" href="/perfil/{{ Auth::user()->id }}">
+                                        <i class="nav-icon fa fa-user"></i> Perfil
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="nav-icon fa fa-sign-out-alt"></i> Terminar sessão
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -71,7 +80,9 @@
                                 </div>
                             </li>
                         @endguest
+                            
                     </ul>
+                   
                 </div>
             </div>
         </nav>

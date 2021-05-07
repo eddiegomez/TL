@@ -30,7 +30,7 @@
                       aria-describedby="example2_info"
                     >
                       <thead>
-                        <tr role="row">
+                        <tr role="row"> 
                           <th
                             class="sorting_asc"
                             tabindex="0"
@@ -39,7 +39,7 @@
                             colspan="1"
                             aria-sort="ascending"
                             aria-label="Rendering engine: activate to sort column descending"
-                          >Identificador</th>
+                          >#</th>
                           <th
                             class="sorting"
                             tabindex="0"
@@ -100,6 +100,10 @@
                           <td>{{centro.nome}}</td>
                           <td>
                             <a href="#" @click="editModal(user)">
+                              <i style="color:green" class="fa fa-eye"></i>
+                            </a>
+                            /
+                            <a href="#" @click="editModal(user)">
                               <i class="fa fa-edit"></i>
                             </a>
                             /
@@ -120,7 +124,7 @@
                       id="example2_info"
                       role="status"
                       aria-live="polite"
-                    >Mostrando 1 a 10 10 1 registos</div>
+                    >Mostrando 1 a 10</div>
                   </div>
                   <div class="col-sm-12 col-md-7">
                     <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
@@ -145,51 +149,6 @@
                             tabindex="0"
                             class="page-link"
                           >1</a>
-                        </li>
-                        <li class="paginate_button page-item">
-                          <a
-                            href="#"
-                            aria-controls="example2"
-                            data-dt-idx="2"
-                            tabindex="0"
-                            class="page-link"
-                          >2</a>
-                        </li>
-                        <li class="paginate_button page-item">
-                          <a
-                            href="#"
-                            aria-controls="example2"
-                            data-dt-idx="3"
-                            tabindex="0"
-                            class="page-link"
-                          >3</a>
-                        </li>
-                        <li class="paginate_button page-item">
-                          <a
-                            href="#"
-                            aria-controls="example2"
-                            data-dt-idx="4"
-                            tabindex="0"
-                            class="page-link"
-                          >4</a>
-                        </li>
-                        <li class="paginate_button page-item">
-                          <a
-                            href="#"
-                            aria-controls="example2"
-                            data-dt-idx="5"
-                            tabindex="0"
-                            class="page-link"
-                          >5</a>
-                        </li>
-                        <li class="paginate_button page-item">
-                          <a
-                            href="#"
-                            aria-controls="example2"
-                            data-dt-idx="6"
-                            tabindex="0"
-                            class="page-link"
-                          >6</a>
                         </li>
                         <li class="paginate_button page-item next" id="example2_next">
                           <a
@@ -257,7 +216,7 @@ export default {
   methods: {
     buscarCentros() {
       axios.get("api/centro").then(({ data }) => {
-        this.centros = data;
+        this.centros = data; 
       });
     },
   },

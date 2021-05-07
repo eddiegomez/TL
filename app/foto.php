@@ -16,6 +16,6 @@ class foto extends Model
      * @var array
      */
     protected $fillable = [
-        'foto'
+        'foto','pessoa_perdida_idpessoa_perdida'
     ];
 }

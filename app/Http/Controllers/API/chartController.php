@@ -46,10 +46,42 @@ class chartController extends Controller
         return $dados;
     }
 
+    public function indexGestor()
+    {
+        
+        $dados ['janeiro'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '1')->count();
+        $dados ['fevereiro'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '2')->count();
+        $dados ['marco'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '3')->count();
+        $dados ['abril'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '4')->count();
+        $dados ['maio'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '5')->count();
+        $dados ['junho'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '6')->count();
+        $dados ['julho'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '7')->count();
+        $dados ['agosto'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '8')->count();
+        $dados ['setembro'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '9')->count();
+        $dados ['outubro'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '10')->count();
+        $dados ['novembro'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '11')->count();
+        $dados ['dezembro'] = DB::table('caso')->where([['estado','=',1],['utilizador_idutilizador','=',2]])->whereMonth('created_at', '12')->count();
+
+        $dados ['ejaneiro'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '1')->count();
+        $dados ['efevereiro'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '2')->count();
+        $dados ['emarco'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '3')->count();
+        $dados ['eabril'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '4')->count();
+        $dados ['emaio'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '5')->count();
+        $dados ['ejunho'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '6')->count();
+        $dados ['ejulho'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '7')->count();
+        $dados ['eagosto'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '8')->count();
+        $dados ['esetembro'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '9')->count();
+        $dados ['eoutubro'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '10')->count();
+        $dados ['enovembro'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '11')->count();
+        $dados ['edezembro'] = DB::table('caso')->where([['estado','=',0],['utilizador_idutilizador','=',2]])->whereMonth('updated_at', '12')->count();
+
+        return $dados;
+    }
+
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request  $request 
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)

@@ -16,6 +16,6 @@ class centro extends Model
      * @var array
      */
     protected $fillable = [
-        'denominacao','capacidade','obs','tipo_centro_idtipo_centro','endereco_idendereco','contacto_idcontacto','utilizador_idutilizador'
+        'denominacao','capacidade','obs','tipo_centro_idtipo_centro','endereco_idendereco','contacto_idcontacto','utilizador_idutilizador','centro_idcentro'
     ];
 }

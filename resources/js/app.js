@@ -73,7 +73,7 @@ let routes = [
 const Foo = {template: '<div>foo</div>'}
 
 const router = new VueRouter({
-   mode: 'history',
+   //mode: 'history',
    routes // short for `routes: routes`
 })
 

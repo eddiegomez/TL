@@ -2,8 +2,8 @@
 
     <!-- CONTENT
     ================================================== -->
-    <div class="container" style="position:relative; top:30px">
-      <div class="row justify-content-center" style="position:relative; top:30px;">
+    <div class="container" style="position:relative; top:30px; height: 1000px;">
+      <div class="row justify-content-center" style="position:relative; top:30px; ">
         <div class="col-12 col-md-5 col-xl-4 my-5 card" style="padding: 30px; border-radius: 25px; box-shadow: 2px 2px 2px grey">
           
 

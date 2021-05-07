@@ -16,6 +16,6 @@ class caso extends Model
      * @var array
      */
     protected $fillable = [
-        'pessoa_perdida_idpessoa_perdida', 'utilizador_idutilizador'
+        'pessoa_perdida_idpessoa_perdida', 'utilizador_idutilizador','data_ocorencia','centro_idcentro'
     ];
 }

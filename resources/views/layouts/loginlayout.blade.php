@@ -7,7 +7,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'SGPP') }}</title>
+    <title>SGPP</title>
+    <!-- Favicon -->
+    <link href="/imagens/fav.png" rel="shortcut icon"/>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -23,7 +25,7 @@
     </style>
 </head>
 <body>
-    <div id="app" style="background-color: #66ffcc; height:100%">
+    <div id="app" style="background-color: rgb(0 162 232);height:100%">
         <main class="">
             @yield('content')
         </main>

@@ -27,6 +27,8 @@ Route::apiResources(['centro'=> 'API\centroController']);
 Route::apiResources(['regPessoa_perdida'=> 'API\UserPessoaPerdidaController']);
 Route::apiResources(['chart'=> 'API\chartController']);
 
+Route::get('dash_gestor', 'API\dashController@gestor');
+Route::get('chartGestor', 'API\chartController@indexGestor');
 Route::get('profile', 'API\UserController@profile');
 Route::get('find', 'API\pessoaPerdidaController@search');
 Route::get('tipo_centro', 'API\centroController@buscarTipos');

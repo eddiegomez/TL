@@ -4,13 +4,17 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\utilizador;
+use App\endereco;
+use App\contacto; 
+use App\centro;
+use App\foto;
+use App\User;
+use DB;
 
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -45,7 +49,11 @@ class UserController extends Controller
 
     public function profile()
     {
-        return auth('api')->user();
+        return DB::table('utilizador')
+            ->leftJoin('users', 'users.id', '=', 'utilizador.users_id')
+            ->select('utilizador.*','users.email')
+            ->where('utilizador.idutilizador','=',2)
+            ->get();
     }
 
     /**

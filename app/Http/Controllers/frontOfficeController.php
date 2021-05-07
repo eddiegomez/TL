@@ -26,7 +26,7 @@ class frontOfficeController extends Controller
         ->leftJoin('endereco', 'endereco.idendereco', '=', 'centro.endereco_idendereco')
         ->leftJoin('contacto', 'contacto.idcontacto', '=', 'centro.contacto_idcontacto')
         ->select('pessoa_perdida.*','pessoa_perdida.created_at as reg', 'foto.foto', 'centro.denominacao','endereco.*', 'contacto.*')
-        ->where('caso.estado','=',1)
+        ->where([['caso.estado','=',1],['pessoa_perdida.tipo','=', 'centro']])
         ->orderBy('pessoa_perdida.created_at', 'desc')
         ->get();
 

@@ -61,8 +61,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="info">
           <a href="#" class="d-block">
           {{Auth::user()->name}}
+          {{session()->put('id_user',Auth::user()->id)}}
           <br ><h6 style="color: grey">({{Auth::user()->email}}) </h6>
-          </a>
+          </a> 
         </div>
 
       </div>
@@ -175,15 +176,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li>
-
-          <li class="nav-item">
-            <router-link to="/testes" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-                Testes
-              </p>
-            </router-link>
-          </li>
           @endcan
 
           @can('isGestor')
@@ -233,14 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <router-link to="/gestao" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-                Gestão
-              </p>
-            </router-link>
-          </li>
+          
           <li class="nav-item">
             <router-link to="/profileGestor" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
@@ -372,7 +357,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </footer>
 </div>
 <!-- ./wrapper -->
-
+<style>
+.curved {
+  border-radius: 25px;
+}
+</style>
 <script src="/js/app.js"></script>
 </body>
 </html>

@@ -16,6 +16,6 @@ class pessoa_perdida extends Model
      * @var array
      */
     protected $fillable = [
-        'nome', 'apelido', 'alcunha', 'sexo', 'data_nascimento','nacionalidade','naturalidade', 'obs',  'foto_idfoto'
+        'nome', 'apelido', 'alcunha', 'sexo', 'data_nascimento','nacionalidade','naturalidade', 'obs',  'foto_idfoto','tipo'
     ];
 }

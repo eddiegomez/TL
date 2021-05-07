@@ -24,15 +24,17 @@ class gestorController extends Controller
      */
     public function index()
     {
-        return DB::table('utilizador')
+        $data['gestores'] = DB::table('utilizador')
             ->leftJoin('users', 'users.id', '=', 'utilizador.users_id')
             ->leftJoin('contacto', 'contacto.idcontacto', '=', 'utilizador.contacto_idcontacto')
             ->leftJoin('foto', 'foto.idfoto', '=', 'utilizador.foto_idfoto')
             ->leftJoin('endereco', 'endereco.idendereco', '=', 'utilizador.endereco_idendereco')
-            ->rightJoin('centro', 'centro.utilizador_idutilizador', '=', 'utilizador.idutilizador')
+            ->leftJoin('centro', 'centro.utilizador_idutilizador', '=', 'utilizador.idutilizador')
             ->select('utilizador.*','users.email','contacto.*','centro.denominacao', 'foto.foto', 'endereco.*')
             ->where('utilizador.tipo_utilizador_idtipo_utilizador','=',2)
             ->get();
+        $data['centros'] = DB::table('centro')->get();
+        return $data;
     }
 
     /**
@@ -60,7 +62,7 @@ class gestorController extends Controller
         ]);
 
         $user = User::create([
-            'name' => $request->nome,
+            'name' => $request->nome.' '.$request->apelido,
             'email' => $request->email,
             'tipo' => "Gestor",
             'password' => Hash::make($request['password'])
@@ -82,6 +84,7 @@ class gestorController extends Controller
             ]);
             $utilizador = utilizador::create([
                 'nome' => $request->nome,
+                'apelido' => $request->apelido,
                 'data_nascimento' => $request->d_nasc,
                 'tipo_utilizador_idtipo_utilizador' => 2,
                 'users_id' => $user->id,

@@ -62,8 +62,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <a href="#" class="d-block">
           <?php echo e(Auth::user()->name); ?>
 
+          <?php echo e(session()->put('id_user',Auth::user()->id)); ?>
+
           <br ><h6 style="color: grey">(<?php echo e(Auth::user()->email); ?>) </h6>
-          </a>
+          </a> 
         </div>
 
       </div>
@@ -176,15 +178,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li>
-
-          <li class="nav-item">
-            <router-link to="/testes" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-                Testes
-              </p>
-            </router-link>
-          </li>
           <?php endif; ?>
 
           <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('isGestor')): ?>
@@ -234,14 +227,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <router-link to="/gestao" class="nav-link">
-              <i class="nav-icon fas fa-cogs"></i>
-              <p>
-                Gestão
-              </p>
-            </router-link>
-          </li>
+          
           <li class="nav-item">
             <router-link to="/profileGestor" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
@@ -373,7 +359,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </footer>
 </div>
 <!-- ./wrapper -->
-
+<style>
+.curved {
+  border-radius: 25px;
+}
+</style>
 <script src="/js/app.js"></script>
 </body>
 </html>
