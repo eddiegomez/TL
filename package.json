@@ -29,7 +29,7 @@
         "@koumoul/vuetify-jsonschema-form": "^0.36.0",
         "admin-lte": "^3.0.0-alpha.2",
         "chart.js": "^2.9.4",
-        "moment": "^2.29.1",
+        "moment": "^2.29.4",
         "sweetalert2": "^9.10.9",
         "vform": "^1.0.1",
         "vue-chartjs": "^3.5.1",
